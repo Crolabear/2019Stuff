@@ -1,0 +1,25 @@
+This comes from a discussion board of a LC problem. The poster proposed the use of XOR to check for duplicate digits. I find this approach very interesting and want to investigate why this works.
+
+Link to original post
+https://leetcode.com/problems/single-number/discuss/282507/Python-with-XOR
+
+
+python3 XOR is a binary operator.
+1 XOR 2 will first be converted to 01 XOR 11. Then perform bitwise comparison.
+Example:
+  01
+  11
+= 10   because (0,1) gives a 1. (1,1) gives a 0
+
+So the idea is when we have [B,A,A,B,C]
+we can do
+A XOR A -> 0
+0 XOR B -> B
+B XOR B -> 0
+0 XOR C -> C
+
+The main question here is: I want to show XOR is associative so that I can move elements in the list around.
+A XOR B XOR C  =  A XOR (B XOR C) ?
+
+A XOR B  = (A & ~B | ~A & B)
+ ... then expand it and check 

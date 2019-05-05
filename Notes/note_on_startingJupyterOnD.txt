@@ -1,0 +1,6 @@
+on windows,
+use cd to change directory
+use dir to view files in current folder
+to change from C to D drives, cd to the C: and then type d:
+
+ 
